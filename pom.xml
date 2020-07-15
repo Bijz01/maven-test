@@ -3,7 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <properties>
+        <java.version>8</java.version>
+        <docker.image.prefix>maventest</docker.image.prefix>
+        <docker.repository>16619956047</docker.repository>
+    </properties>
     <groupId>com.jz</groupId>
     <artifactId>ops</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -62,6 +66,14 @@
                 <configuration>
                   <repository>${docker.repository}/${docker.image.prefix}/${project.artifactId}</repository>
                   <tag>${project.version}</tag>
+                  <env>
+                     <TZ>Asia/Shanghai</TZ>
+                  </env>
+                 <!--时区配置-->
+                  <runs>
+                     <run>ln -snf /usr/share/zoneinfo/$TZ /etc/localtime</run>
+                     <run>echo $TZ > /etc/timezone</run>                      
+                  </runs>
                   <buildArgs>
                     <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
                   </buildArgs>
