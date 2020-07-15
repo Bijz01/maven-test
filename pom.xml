@@ -53,6 +53,7 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <includeSystemScope>true</includeSystemScope>
                     <executable>true</executable>
                     <classifier>execute</classifier>
                 </configuration>
