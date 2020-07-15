@@ -49,7 +49,13 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>utf-8</encoding>
+                    <useDefaultDelimiters>true</useDefaultDelimiters>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
@@ -64,8 +70,10 @@
                   </execution>
                 </executions>
                 <configuration>
-                  <repository>${docker.repository}/${docker.image.prefix}/${project.artifactId}</repository>
+                  <repository>${docker.repository}/${docker.image.prefix}</repository>
                   <tag>${project.version}</tag>
+                  <username>16619956047</username>
+                  <password>zhao8023</password>
                   <env>
                      <TZ>Asia/Shanghai</TZ>
                   </env>
@@ -77,14 +85,6 @@
                   <buildArgs>
                     <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
                   </buildArgs>
-                </configuration>
-            </plugin>
-                 
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <configuration>
-                    <encoding>utf-8</encoding>
-                    <useDefaultDelimiters>true</useDefaultDelimiters>
                 </configuration>
             </plugin>
         </plugins>
