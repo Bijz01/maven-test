@@ -3,6 +3,6 @@ ARG workdir=/app
 VOLUME ${workdir}
 WORKDIR ${workdir}
 ARG JAR_FILE
-ADD ${JAR_FILE} app.jar
+COPY ${JAR_FILE} app.jar
 EXPOSE 8899
-ENTRYPOINT ["java", "-jar", "-Xmx512m", "app.jar"]
+ENTRYPOINT ["java", "-Xmx512m", "-jar", "app.jar"]
