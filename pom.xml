@@ -8,7 +8,6 @@
     <version>1.0.1</version>
     <properties>
         <java.version>8</java.version>
-        <project.build.finalName>ops-1.0.1-execute</project.build.finalName>
         <docker.image.prefix>maventest</docker.image.prefix>
         <docker.repository>16619956047</docker.repository>
     </properties>
@@ -86,7 +85,7 @@
                      <run>echo $TZ > /etc/timezone</run>                      
                   </runs>
                   <buildArgs>
-                    <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+                    <JAR_FILE>target/${project.build.finalName}-execute.jar</JAR_FILE>
                   </buildArgs>
                 </configuration>
             </plugin>
