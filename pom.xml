@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.jz</groupId>
     <artifactId>ops</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <properties>
         <java.version>8</java.version>
-        <project.build.finalName>ops-1.0.0-execute</project.build.finalName>
+        <project.build.finalName>ops-1.0.1-execute</project.build.finalName>
         <docker.image.prefix>maventest</docker.image.prefix>
         <docker.repository>16619956047</docker.repository>
     </properties>
