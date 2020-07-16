@@ -76,13 +76,10 @@
                   <tag>${project.version}</tag>
                   <username>16619956047</username>
                   <password>zhao8023</password>
-                  <env>
-                     <TZ>Asia/Shanghai</TZ>
-                  </env>
-                 <!--时区配置-->
+                  <!--时区配置-->
                   <runs>
-                     <run>ln -snf /usr/share/zoneinfo/$TZ /etc/localtime</run>
-                     <run>echo $TZ > /etc/timezone</run>                      
+                     <run>ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</run>
+                     <run>echo Asia/Shanghai > /etc/timezone</run>                      
                   </runs>
                   <buildArgs>
                     <JAR_FILE>target/${project.build.finalName}-execute.jar</JAR_FILE>
