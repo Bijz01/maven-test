@@ -1,2 +1,5 @@
 server:
   port: 8899
+logging:
+  path: /log/app
+  file: /log/app/app.log
