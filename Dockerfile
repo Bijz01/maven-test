@@ -5,4 +5,4 @@ WORKDIR ${workdir}
 ARG JAR_FILE
 ADD ${JAR_FILE} app.jar
 EXPOSE 8899
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "-Xmx512m", "app.jar"]
